@@ -86,7 +86,6 @@ def main():
                     pts_draw[:, 1] = np.array(poly_pts)[:, 1] + roi_box[1]
                     cv2.polylines(frame, pts_draw.reshape((1, -1, 2)), True, poly_draw.final_color, 2)
 
-            # TODO: tune nms and score threshold
             # detect
             class_label_ids, confidences, bboxes = detector.net.detect(roi_cp, confThreshold=0.45, nmsThreshold=0.1)
 
